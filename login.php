@@ -21,11 +21,11 @@ if(isset($_SESSION['loggedIn'])){
                         <form action="login-code.php" method="POST">
 
                             <div class="mb-3">
-                                <label>Enter Email Id</label>
+                                <label>Please Enter Your Email Address</label>
                                 <input type="email" name="email" class="form-control" required />
                             </div>
                             <div class="mb-3">
-                                <label>Enter Password</label>
+                                <label>Password</label>
                                 <input type="password" name="password" class="form-control" required />
                             </div>
                             <div class="my-3">

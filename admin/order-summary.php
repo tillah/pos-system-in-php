@@ -56,9 +56,9 @@ if(!isset($_SESSION['productItems'])){
                                         <tbody>
                                             <tr>
                                                 <td style="text-align: center;" colspan="2">
-                                                    <h4 style="font-size: 23px; line-height: 30px; margin:2px; padding: 0;">Company XYZ</h4>
-                                                    <p style="font-size: 16px; line-height: 24px; margin:2px; padding: 0;">#555, 1st street, 3rd cross, bangalore, india </p>
-                                                    <p style="font-size: 16px; line-height: 24px; margin:2px; padding: 0;">company xyz pvt ltd.</p>
+                                                    <h4 style="font-size: 23px; line-height: 30px; margin:2px; padding: 0;">Agri Solutions</h4>
+                                                    <p style="font-size: 16px; line-height: 24px; margin:2px; padding: 0;">b500, 15 Bartholomew RD, BIRMINGHAM, ENGLAND </p>
+                                                    <p style="font-size: 16px; line-height: 24px; margin:2px; padding: 0;">Agri Solutions pvt ltd.</p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -72,7 +72,7 @@ if(!isset($_SESSION['productItems'])){
                                                     <h5 style="font-size: 20px; line-height: 30px; margin:0px; padding: 0;">Invoice Details</h5>
                                                     <p style="font-size: 14px; line-height: 20px; margin:0px; padding: 0;">Invoice No: <?= $invoiceNo; ?> </p>
                                                     <p style="font-size: 14px; line-height: 20px; margin:0px; padding: 0;">Invoice Date: <?= date('d M Y'); ?> </p>
-                                                    <p style="font-size: 14px; line-height: 20px; margin:0px; padding: 0;">Address: 1st main road, Bangalore, India  </p>
+                                                    <p style="font-size: 14px; line-height: 20px; margin:0px; padding: 0;">Address: 1st main road, BIRMINGHAM, England  </p>
                                                 </td>
                                             </tr>
                                         </tbody>

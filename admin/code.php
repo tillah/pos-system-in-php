@@ -93,7 +93,7 @@ if(isset($_POST['updateAdmin']))
         redirect('admins-create.php','Please fill required fields.');
     }
 }
-
+// categories update function here 
 
 if(isset($_POST['saveCategory']))
 {
@@ -136,7 +136,7 @@ if(isset($_POST['updateCategory']))
         redirect('categories-edit.php?id='.$categoryId,'Something Went Wrong!');
     }
 }
-
+// i can update and edit products here >>
 
 if(isset($_POST['saveProduct']))
 {
@@ -240,7 +240,7 @@ if(isset($_POST['updateProduct']))
     }
 }
 
-
+// i can update and edit customers from here >>
 
 if(isset($_POST['saveCustomer']))
 {
@@ -318,7 +318,101 @@ if(isset($_POST['updateCustomer']))
         redirect('customers-edit.php?id='.$customerId,'Please fill required fields');
     }
 }
+// i can update the farmers here >>
 
+
+
+if(isset($_POST['saveFarmer']))
+{
+    $name = validate($_POST['name']);
+    $email = validate($_POST['email']);
+    $phone = validate($_POST['phone']);
+    $account = validate($_POST['account']);
+    $product = validate($_POST['product']);
+    $frequency = validate($_POST['frequency']);
+    $delivery = validate($_POST['delivery']);
+    $status = isset($_POST['status']) ? 1:0;
+
+    if($name != '')
+    {
+        $emailCheck = mysqli_query($conn, "SELECT * FROM farmers WHERE email='$email'AND id!='$farmerId'");
+        if($emailCheck){
+            if(mysqli_num_rows($emailCheck) > 0){
+                redirect('farmers.php','Email Already used by another user');
+            }
+        }
+
+        $data = [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'account' => $account,
+            'product' => $product,
+            'frequency' => $frequency,
+            'delivery' => $delivery,
+            'status' => $status
+        ];
+
+        $result = insert('farmers',$data);
+
+        if($result){
+            redirect('farmers.php','Farmer Created Successfully');
+        }else{
+            redirect('farmers.php','Somthing Went Wrong');
+        }
+    }
+    else
+    {
+        redirect('farmers.php','Please fill required fields');
+    }
+}
+
+if(isset($_POST['updateFarmer']))
+{
+    $farmerId = validate($_POST['farmerId']);
+
+    $name = validate($_POST['name']);
+    $email = validate($_POST['email']);
+    $phone = validate($_POST['phone']);
+    $account = validate($_POST['account']);
+    $product = validate($_POST['product']);
+    $frequency = validate($_POST['frequency']);
+    $delivery = validate($_POST['delivery']);
+    $status = isset($_POST['status']) ? 1:0;
+
+    if($name != '')
+    {
+        $emailCheck = mysqli_query($conn, "SELECT * FROM farmers WHERE email='$email' AND id!='$farmerId'");
+        if($emailCheck){
+            if(mysqli_num_rows($emailCheck) > 0){
+                redirect('farmers-edit.php?id='.$farmerId,'Email Already used by another user');
+            }
+        }
+
+        $data = [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'account' => $account,
+            'product' => $product,
+            'frequency' => $frequency,
+            'delivery' => $delivery,
+            'status' => $status
+        ];
+
+        $result = update('farmer', $farmerId, $data);
+
+        if($result){
+            redirect('farmers-edit.php?id='.$farmerId,'Farmers Updated Successfully');
+        }else{
+            redirect('farmers-edit.php?id='.$farmerId,'Somthing Went Wrong');
+        }
+    }
+    else
+    {
+        redirect('farmers-edit.php?id='.$farmerId,'Please fill required fields');
+    }
+}
 
 
 

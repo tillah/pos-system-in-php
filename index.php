@@ -7,7 +7,7 @@
 
                 <?php alertMessage(); ?>
                 
-                <h1 class="mt-3">Farmer System</h1>
+                <h1 class="mt-3">Welcome To Agri-Solutions</h1>
 
                 <?php if(!isset($_SESSION['loggedIn'])) : ?>
                 <a href="login.php" class="btn btn-primary mt-4">Login</a>

@@ -6,8 +6,8 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading">Core</div>
-
+                <div class="sb-sidenav-menu-heading">ORDERS</div>
+`               
                 <a class="nav-link <?= $page == 'index.php' ? 'active':''; ?>" href="index.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard 
@@ -24,7 +24,7 @@
                 </a>
 
 
-                <div class="sb-sidenav-menu-heading">Interface</div>
+                <div class="sb-sidenav-menu-heading">PRODUCTS</div>
 
                 <a class="nav-link <?= ($page == 'categories-create.php') || ($page == 'categories.php') ? 'collapse active':'collapsed'; ?>" 
                     href="#" 
@@ -76,6 +76,22 @@
                     </nav>
                 </div>
 
+                <a class="nav-link <?= ($page == 'farmers-create.php') || ($page == 'farmers.php') ? 'collapse active':'collapsed'; ?>" href="#" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#collapseFarmer" 
+                    aria-expanded="false" aria-controls="collapseFarmer">
+
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Farmer
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse <?= ($page == 'farmers-create.php') || ($page == 'farmers.php') ? 'show':''; ?>" id="collapseFarmer" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link <?= $page == 'farmers-create.php' ? 'active':''; ?>" href="farmers-create.php">Add Farmer</a>
+                        <a class="nav-link <?= $page == 'farmers.php' ? 'active':''; ?>" href="farmers.php">View Farmers</a>
+                    </nav>
+                </div>
+
                 <a class="nav-link <?= ($page == 'admins-create.php') || ($page == 'admins.php') ? 'collapse active':'collapsed'; ?>" href="#" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#collapseAdmins" 
@@ -96,7 +112,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            Start Bootstrap
+            Tehillah
         </div>
     </nav>
 </div>

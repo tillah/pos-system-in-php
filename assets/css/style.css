@@ -1,5 +1,10 @@
 
-.mainPosBg{
-    background-image: url('../images/pos-bg.png'); 
+/*.mainPosBg{
+    background-image: url('../images/pexels-designstrive-1334312.jpg'); 
+    background-size: 80% ;
+}*/
+
+body{
+    background-image:url('../images/pexels-grizzlybear-1198507.jpg');
     background-size: cover;
-}
+  }
